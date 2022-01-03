@@ -67,13 +67,14 @@ class AppWindow(QMainWindow):
         
         self.fig_time = InwardFigure(width=5, height=4, dpi=100)
         self.fig_time.axes.set_xlim(0, 4096)
-        self.fig_time.axes.set_title('Cost time Casual vs Woodbury')
+        self.fig_time.axes.set_title(' Woodbury & Cost_time Casual')
         self.fig_time.axes.set_ylabel('Time(sec)')
         self.ui.verticalLayout_4.addWidget(self.fig_time)
         
         self.fig_mse = InwardFigure(width=5, height=4, dpi=100)
         self.fig_mse.axes.set_xlim(0, 4096)
-        self.fig_mse.axes.set_title('MSE Casual vs Woodbury')
+        self.fig_mse.axes.set_title(' Woodbury & MSE Casual')
+        self.fig_mse.axes.set_ylabel('Time(sec)')
         self.ui.verticalLayout_5.addWidget(self.fig_mse)
         
         self.show()
@@ -199,10 +200,10 @@ class AppWindow(QMainWindow):
             total_time_cr = np.around(total_time_cr, 5)
             total_time_w = np.around(total_time_w, 5)
             self.fig_time.axes.clear()
-            self.fig_time.axes.set_title('Cost time Casual and Woodbury')
+            self.fig_time.axes.set_title('Woodbury & Cost time Casual')
             self.fig_time.axes.set_ylabel('Time(sec)')
-            self.fig_time.axes.plot(time_cr, 'green', label='Casual : '+str(total_time_cr))
-            self.fig_time.axes.plot(time_w, 'orange', label='Woodbury : '+str(total_time_w))
+            self.fig_time.axes.plot(time_cr, 'y', label='Casual : '+str(total_time_cr))
+            self.fig_time.axes.plot(time_w, 'b', label='Woodbury : '+str(total_time_w))
             self.fig_time.axes.legend()
             self.fig_time.draw()
             self.ui.verticalLayout_4.addWidget(self.fig_time) 
@@ -214,8 +215,9 @@ class AppWindow(QMainWindow):
             mse = result['mse']
 
             self.fig_mse.axes.clear()
-            self.fig_mse.axes.set_title('MSE Casual and Woodbury')
-            self.fig_mse.axes.plot(mse, 'r')
+            self.fig_mse.axes.set_title('Woodbury & MSE Casual')
+            self.fig_mse.axes.set_ylabel('Time(sec)')
+            self.fig_mse.axes.plot(mse, 'g')
             self.fig_mse.draw()
             self.ui.verticalLayout_5.addWidget(self.fig_mse)
 

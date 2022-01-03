@@ -16,7 +16,7 @@ def K (him):
 
     return u,K
 
-#R
+
 
 def R (him):
     
@@ -345,18 +345,18 @@ if __name__ == '__main__':
     plt.figure("computing time R")
     plt.title("computing time R")
     t3 = np.around(np.sum(time3), 5)
-    plt.plot(range(len(time3)), time3, 'b',label = 'Casaul : '+ str(t3))
+    plt.plot(range(len(time3)), time3, 'b',label = 'Casaul : '+ str(t3), color = 'r')
     t5 = np.around(np.sum(time5), 5)
-    plt.plot(range(len(time5)), time5, 'r',label ='Woodbury : '+  str(t5))
+    plt.plot(range(len(time5)), time5, 'r',label ='Woodbury : '+  str(t5), color = 'b')
     plt.legend()
     plt.xlim(0,4096)
     
     plt.figure("computing time K")
     plt.title("computing time K")
     t4 = np.around(np.sum(time4), 5)
-    plt.plot(range(len(time4)), time4, 'b', label='Casaul : '+ str(t4))
+    plt.plot(range(len(time4)), time4, 'b', label='Casaul : '+ str(t4), color = 'r')
     t6 = np.around(np.sum(time6), 5)
-    plt.plot(range(len(time6)), time6, 'r', label='Woodbury : '+  str(t6))
+    plt.plot(range(len(time6)), time6, 'r', label='Woodbury : '+  str(t6), color = 'g')
     plt.legend()
     plt.xlim(0, 4096)
     
